@@ -1,0 +1,8 @@
+        {
+            "name": "okcoin.cn",
+            "url" : "https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny",
+            "currency" : "CNY",
+            "buy" : ["ticker", "buy"],
+            "sell" : ["ticker", "sell"],
+            "img": "noimage"
+        },

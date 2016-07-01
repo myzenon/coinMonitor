@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100,900);
+
+:global {
+    body {
+        font-family: 'Roboto', sans-serif;
+        -webkit-app-region: drag;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5); 
+    } 
+    ::-webkit-scrollbar-button {
+        display: none;
+    }
+    ::-webkit-scrollbar {
+        width: 7.5px;
+    }
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: -webkit-calc(100% - 75px);
+    -webkit-app-region: no-drag;
+    overflow: hidden;
+    background-color: #EEE;
+}
+
+.content:hover {
+    overflow-y: auto;
+}
+
+.control {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    -webkit-app-region: no-drag;
+}
+
+.bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 7%;
+    -webkit-app-region: drag;
+}
+
+.grid {
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
