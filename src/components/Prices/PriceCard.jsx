@@ -14,7 +14,7 @@ const PriceCard = ({ price }) => (
     >
         <CardHeader
             title={
-                <img className={style.img_header} src="https://d2v7vc3vnopnyy.cloudfront.net/img/bx.svg" />
+                <img className={style.img_header} src={price.img} />
             }
         />
         <CardText
@@ -24,9 +24,20 @@ const PriceCard = ({ price }) => (
         >
         <Row>
             <Col xs={8}>
-                <span className={style.main_price_buy}>BAHT: 700฿</span>
+                <span className={style.main_price_buy}>{price.buy}</span>
                 <br />
-                <span className={style.sub_price_buy}>USD: 1600$</span>
+                {
+                    (() => {
+                        let value;
+                        if(price.buy_actual) {
+                            value = price.buy_actual
+                        }
+                        else {
+                            value = <span>&nbsp;</span>
+                        }
+                        return <span className={style.sub_price_buy}>{value}</span>
+                    })()
+                }
             </Col>
             <Col className={style.indicatior_price} xs={4}>BUY&nbsp;</Col>
         </Row>
@@ -43,9 +54,20 @@ const PriceCard = ({ price }) => (
         </Row>
         <Row>
             <Col xs={8}>
-                <span className={style.main_price_sell}>BAHT: 700฿</span>
+                <span className={style.main_price_sell}>{price.sell}</span>
                 <br />
-                <span className={style.sub_price_sell}>USD: 1600$</span>
+                {
+                    (() => {
+                        let value;
+                        if(price.sell_actual) {
+                            value = price.sell_actual
+                        }
+                        else {
+                            value = <span>&nbsp;</span>
+                        }
+                        return <span className={style.sub_price_sell}>{value}</span>
+                    })()
+                }
             </Col>
             <Col className={style.indicatior_price} xs={4}>SELL</Col>
         </Row>

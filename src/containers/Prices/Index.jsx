@@ -3,34 +3,21 @@ import { Row, Col } from 'react-flexbox-grid'
 import PriceCardContainer from './PriceCard'
 
 class PricesContainer extends Component {
-    constructor(props, context) {
-        super(props, context);
-        setInterval(console.log(props), 1000)
-    }
-    
-    componentDidMount() {
-        
-    }
-    
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log(nextProps);
-    }
     render() {
         let siteModules = [];
         for(let site of this.props.data) {
-            siteModules.push(<Col xs={4}>{site.name}<PriceCardContainer data={site} /></Col>)
+            siteModules.push(<Col xs={4}><PriceCardContainer key={site.name} data={site} /></Col>)
         }
         let modules = [];
-        for(let count = 0; count < siteModules.length; count++) {
+        for(let count = 0; count < siteModules.length; count+=3) {
             modules.push(<Row><Col xs={12}>&nbsp;</Col></Row>);
             modules.push(<Row><Col xs={12}>&nbsp;</Col></Row>);
-            let sites = "";
+            let sites = [];
             for(let countSite = 0; ((countSite < siteModules.length) && (countSite < 3)); countSite++) {
-                sites += siteModules[count + countSite];
+                sites.push(siteModules[count + countSite]);
             }   
-            modules.push(<Row>{sites}</Row>);   
+            modules.push(<Row>{sites}</Row>); 
         }
-        console.log(modules);
         return (
             <div>{modules}</div> 
         );

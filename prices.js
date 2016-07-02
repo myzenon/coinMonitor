@@ -1,6 +1,7 @@
 const { ipcMain } = require('electron');
 const https = require('https');
 const apiPath = require('./config/apiPath.json');
+const apiImg = require('./config/apiImg.json');
 const currencyPath = require('./config/currency.json');
 
 const errorHandle = (error, url = null) => {
@@ -130,15 +131,32 @@ const changeCurrency = (coinsData) => {
     });
 };
 
-ipcMain.on('get-prices', (event, arg) => {
-    Promise.all(objURLtoGetPromiseArray(apiPath, ["url"]))
+const matchImg = (coinsData) => {
+    for(coin in coinsData) {
+        coinsData[coin].forEach((coinData) => {
+            coinData.img = apiImg[coinData.name];
+        });
+    }
+    return coinsData;
+}
+
+let data = {
+    btc: [],
+    eth: []
+}
+
+Promise.all(objURLtoGetPromiseArray(apiPath, ["url"]))
         .then(mapAPIToData)
         .then(changeCurrency)
+        .then(matchImg)
         .then((coinsData) => {
             console.log('GET Prices Complete');
-            event.sender.send('send-prices', coinsData);
+            data = coinsData;
         })
     ;
+
+ipcMain.on('get-prices', (event, arg) => {
+    event.sender.send('send-prices', data);
 });
 
 
