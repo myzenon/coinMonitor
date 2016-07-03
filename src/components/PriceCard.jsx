@@ -6,7 +6,7 @@ import Divider from 'material-ui/Divider'
 import { grey600 } from 'material-ui/styles/colors'
 
 const PriceCard = ({ price }) => (
-    <Card 
+    <Card
         zDepth={3}
         style={{
             backgroundColor : grey600

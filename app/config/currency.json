@@ -1,0 +1,16 @@
+{
+    "CNY": {
+        "manualRate": "",
+        "rate": [
+            "rate"
+        ],
+        "url": "https://currency-api.appspot.com/api/cny/thb.json"
+    },
+    "USD": {
+        "manualRate": "",
+        "rate": [
+            "rate"
+        ],
+        "url": "https://currency-api.appspot.com/api/usd/thb.json"
+    }
+}

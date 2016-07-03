@@ -1,4 +1,5 @@
 # exclude everything except directory foo/bar
 node_modules/
 bower_components/
+dist/
 .vscode

@@ -19,9 +19,6 @@ let options = {
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
-    // plugins: [
-    //     new webpack.HotModuleReplacementPlugin()
-    // ],
     module: {
         loaders: [
             {
@@ -33,9 +30,6 @@ let options = {
             {
                 test: /\.scss$/,
                 loaders: ["style", "css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]", "sass?sourceMap"]
-            },
-            {   test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
-                loader: 'url-loader?limit=100000'
             },
             {
                 test: /\.css$/,

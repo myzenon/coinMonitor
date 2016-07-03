@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { AppBar, IconButton } from 'material-ui'
-import style from './menu.scss'
+import style from './Menu.scss'
 import { teal700, blue300, cyan900 } from 'material-ui/styles/colors'
 import DashBoardIcon from 'material-ui/svg-icons/action/dashboard'
 import CompareIcon from 'material-ui/svg-icons/action/compare-arrows'
@@ -20,7 +20,7 @@ const inkBarStyle = {
     backgroundColor: blue300
 }
 
-const Menu = ({ handleActive }) => {
+const Menu = ({ handleActive, nowActive }) => {
     return (
        <AppBar
             style={barStyle}
@@ -32,7 +32,7 @@ const Menu = ({ handleActive }) => {
                 <Tabs
                     tabItemContainerStyle={barStyle}
                     inkBarStyle={inkBarStyle}
-                    initialSelectedIndex={1}
+                    initialSelectedIndex={nowActive}
                 >
                     <Tab
                         icon={<DashBoardIcon />}
@@ -42,11 +42,6 @@ const Menu = ({ handleActive }) => {
                     <Tab 
                         icon={<DashBoardIcon />}
                         label="btc"
-                        onActive={handleActive}
-                    />
-                    <Tab
-                        icon={<CompareIcon />}
-                        label="compare"
                         onActive={handleActive}
                     />
                     <Tab
@@ -61,7 +56,20 @@ const Menu = ({ handleActive }) => {
 }
 
 Menu.propTypes = {
-    handleActive: PropTypes.func.isRequired
+    handleActive: PropTypes.func.isRequired,
+    nowActive: PropTypes.number
 }
 
 export default Menu
+
+/***********************
+ * 
+ * 
+ *                   <Tab
+                        icon={<CompareIcon />}
+                        label="compare"
+                        onActive={handleActive}
+                    />
+ * 
+ * 
+ ************************/

@@ -5,42 +5,58 @@
             "url" : "https://cex.io/api/ticker/BTC/USD",
             "currency" : "USD",
             "buy" : ["ask"],
-            "sell" : ["bid"]
+            "sell" : ["bid"],
+            "filters" : []
         },
         {
             "name": "bx.in.th",
             "url" : "https://bx.in.th/api/",
             "currency" : "THB",
             "buy" : ["1", "orderbook", "asks", "highbid"],
-            "sell" : ["1", "orderbook", "bids", "highbid"]
+            "sell" : ["1", "orderbook", "bids", "highbid"],
+            "filters" : [
+                {
+                    "type": "static",
+                    "value": "0"
+                },
+                {
+                    "type": "percent",
+                    "value": "0",
+                    "from": "original"
+                }
+            ]
         },
         {
             "name": "okcoin.cn",
             "url" : "https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny",
             "currency" : "CNY",
             "buy" : ["ticker", "buy"],
-            "sell" : ["ticker", "sell"]
+            "sell" : ["ticker", "sell"],
+            "filters" : []
         },
         {
             "name": "btc-e.com",
             "url" : "https://btc-e.com/api/2/btc_usd/ticker",
             "currency" : "USD",
             "buy" : ["ticker", "buy"],
-            "sell" : ["ticker", "sell"]
+            "sell" : ["ticker", "sell"],
+            "filters" : []
         },
         {
             "name": "coins.co.th",
             "url" : "https://quote.coins.ph/v1/markets",
             "currency" : "THB",
             "buy" : ["markets", "5", "ask"],
-            "sell" : ["markets", "5", "bid"]
+            "sell" : ["markets", "5", "bid"],
+            "filters" : []
         },
         {
             "name": "btcchina.com",
             "url" : "https://data.btcchina.com/data/ticker?market=btccny",
             "currency" : "CNY",
             "buy" : ["ticker", "buy"],
-            "sell" : ["ticker", "sell"]
+            "sell" : ["ticker", "sell"],
+            "filters" : []
         }
     ],
     "eth": [
@@ -49,14 +65,16 @@
             "url" : "https://bx.in.th/api/",
             "currency" : "THB",
             "buy" : ["21", "orderbook", "asks", "highbid"],
-            "sell" : ["21", "orderbook", "bids", "highbid"]
+            "sell" : ["21", "orderbook", "bids", "highbid"],
+            "filters" : []
         },
         {
             "name": "poloniex.com",
             "url" : "https://poloniex.com/public?command=returnTicker",
             "currency" : "BTC",
             "buy" : ["BTC_ETH", "lowestAsk"],
-            "sell" : ["BTC_ETH", "highestBid"]
+            "sell" : ["BTC_ETH", "highestBid"],
+            "filters" : []
         }
     ]
 }

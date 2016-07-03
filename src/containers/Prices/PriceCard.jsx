@@ -28,7 +28,7 @@ class PriceCardContainer extends Component {
     }
 
     render() {
-        let price = this.props.data;
+        let price = Object.assign({}, this.props.data);
         price.buy = this.changeCurrencyForm('THB' ,this.changePriceForm(price.buy));
         price.sell = this.changeCurrencyForm('THB' ,this.changePriceForm(price.sell));
         if(price.buy_actual) {
