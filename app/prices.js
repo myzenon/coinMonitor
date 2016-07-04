@@ -81,8 +81,8 @@ module.exports = (mainEvent) => {
                     coinsData[coin].push({
                         "name": api.name,
                         "currency": api.currency,
-                        "buy": getFromKeyPath(find.data, api.buy),
-                        "sell": getFromKeyPath(find.data, api.sell),
+                        "buy": parseFloat(getFromKeyPath(find.data, api.buy)),
+                        "sell": parseFloat(getFromKeyPath(find.data, api.sell)),
                     });
                 }
             });
@@ -152,8 +152,12 @@ module.exports = (mainEvent) => {
                                 buyToCal = originBuy;
                                 sellToCal = originSell;
                             }
-                            coinsData[coin][index].buy += (filter.value / 100.0) * buyToCal;
-                            coinsData[coin][index].sell += (filter.value / 100.0) * sellToCal;
+                            if(filter.only !== "buy") {
+                                coinsData[coin][index].sell -= parseFloat((filter.value / 100.0) * sellToCal);
+                            }
+                            if(filter.only !== "sell") {
+                                coinsData[coin][index].buy += parseFloat((filter.value / 100.0) * buyToCal);
+                            }
                     }
                 });
             }

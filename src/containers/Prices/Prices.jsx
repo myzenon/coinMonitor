@@ -16,7 +16,7 @@ class PricesContainer extends Component {
         };
         const sendFN = () => { ipcRenderer.send('get-prices') }
         sendFN();
-        this.setInterval(sendFN, 1000);
+        this.setInterval(sendFN, 60000);
         ipcRenderer.on('send-prices', this.listeners);
     }
     setInterval() {

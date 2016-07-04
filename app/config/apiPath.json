@@ -16,12 +16,8 @@
             "sell" : ["1", "orderbook", "bids", "highbid"],
             "filters" : [
                 {
-                    "type": "static",
-                    "value": "0"
-                },
-                {
                     "type": "percent",
-                    "value": "0",
+                    "value": "0.25",
                     "from": "original"
                 }
             ]
@@ -48,7 +44,14 @@
             "currency" : "THB",
             "buy" : ["markets", "5", "ask"],
             "sell" : ["markets", "5", "bid"],
-            "filters" : []
+            "filters" : [
+                {
+                    "type": "percent",
+                    "value": "1",
+                    "from": "original",
+                    "only": "buy"
+                }
+            ]
         },
         {
             "name": "btcchina.com",
