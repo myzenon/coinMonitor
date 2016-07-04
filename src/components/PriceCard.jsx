@@ -3,13 +3,13 @@ import { Row, Col } from 'react-flexbox-grid'
 import { Card, CardHeader, CardText }  from 'material-ui/Card'
 import style from './PriceCard.scss'
 import Divider from 'material-ui/Divider'
-import { grey600 } from 'material-ui/styles/colors'
+import { grey700 } from 'material-ui/styles/colors'
 
 const PriceCard = ({ price }) => (
     <Card
         zDepth={3}
         style={{
-            backgroundColor : grey600
+            backgroundColor : grey700
         }} 
     >
         <CardHeader

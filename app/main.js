@@ -17,7 +17,8 @@ mainEvent.on('open-program', () => {
     minWidth: 1000,
     minHeight: 600,
     resizable: false,
-    frame: false
+    frame: true,
+    autoHideMenuBar: true
   });
   if(isDev) {
     win.loadURL('http://localhost:8080/index-dev.html');

@@ -10,8 +10,7 @@ class App extends Component {
             <MuiThemeProvider>
                 <div>
                     <div className={style.content}>
-                        <div className={style.bar}>&nbsp;</div>
-                        <nav className={style.control}><Control /></nav>
+
                         <Grid className={style.grid}>{this.props.children}</Grid>
                     </div>
                     <nav className={style.menu}>

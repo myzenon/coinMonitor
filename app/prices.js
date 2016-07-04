@@ -195,7 +195,7 @@ module.exports = (mainEvent) => {
     getAllPrices().then(() => {
         mainEvent.emit('open-program');
     });
-    setInterval(getAllPrices, 120000);
+    setInterval(getAllPrices, 30000);
 
     ipcMain.on('get-prices', (event, arg) => {
         event.sender.send('send-prices', data);

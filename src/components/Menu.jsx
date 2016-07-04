@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react';
 import { AppBar, IconButton } from 'material-ui'
 import style from './Menu.scss'
-import { teal700, blue300, cyan900 } from 'material-ui/styles/colors'
+import { teal700, lightBlueA700, cyan900, lightBlue900 } from 'material-ui/styles/colors'
 import DashBoardIcon from 'material-ui/svg-icons/action/dashboard'
 import CompareIcon from 'material-ui/svg-icons/action/compare-arrows'
 import SettingsIcon from 'material-ui/svg-icons/action/settings'
 import {Tabs, Tab} from 'material-ui/Tabs';
 
 const barStyle = {
-    backgroundColor: cyan900
+    backgroundColor: lightBlue900
 }
 
 const titleStyle = {
@@ -17,7 +17,7 @@ const titleStyle = {
 
 const inkBarStyle = {
     height: '5px',
-    backgroundColor: blue300
+    backgroundColor: lightBlueA700
 }
 
 const Menu = ({ handleActive, nowActive }) => {
