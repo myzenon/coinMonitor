@@ -1,9 +1,7 @@
 const electron = require('electron');
 const EventEmitter = require('events');
-const fs = require('fs');
 const { app, BrowserWindow, ipcMain } = electron;
 let win;
-
 
 const isDev = process.argv.indexOf('dev') === -1 ? false : true;
 

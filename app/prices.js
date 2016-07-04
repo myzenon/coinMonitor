@@ -201,6 +201,9 @@ module.exports = (mainEvent) => {
         event.sender.send('send-prices', data);
     });
 
+    ipcMain.on('get-currencies', (event, arg) => {
+        event.returnValue = JSON.parse(fs.readFileSync(__dirname + '/config/currency.json', 'utf8'));
+    });
 
     ipcMain.on('change-currencies', (event, arg) => {
         currencyPath = arg;
